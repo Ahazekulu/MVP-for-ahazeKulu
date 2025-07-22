@@ -9,13 +9,13 @@
     <style>
         /* Basic Reset & Body Styling */
         body {
-            font-family: 'Inter', Arial, sans-serif; /* Using Inter as per instructions */
+            font-family: 'Inter', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f7f6; /* Light background */
+            background-color: #f4f7f6;
             color: #333;
             line-height: 1.6;
-            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+            scroll-behavior: smooth;
         }
 
         .container {
@@ -32,16 +32,16 @@
             padding: 10px 0;
             border-bottom: 5px solid #218838;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            position: sticky; /* Make header sticky */
+            position: sticky;
             top: 0;
-            z-index: 100; /* Ensure it stays on top */
+            z-index: 100;
         }
 
         header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            flex-wrap: wrap;
         }
 
         header h1 {
@@ -55,23 +55,23 @@
             margin: 0;
             padding: 0;
             display: flex;
-            flex-wrap: wrap; /* Allow nav items to wrap */
+            flex-wrap: wrap;
             justify-content: flex-end;
         }
 
         header nav ul li {
             margin-left: 20px;
-            margin-bottom: 5px; /* For wrapped items */
+            margin-bottom: 5px;
         }
 
         header nav ul li a {
             color: white;
             text-decoration: none;
             padding: 8px 15px;
-            border-radius: 8px; /* Rounded corners */
+            border-radius: 8px;
             transition: background-color 0.3s ease, transform 0.2s ease;
             font-weight: 500;
-            display: block; /* Make links block for better touch targets */
+            display: block;
         }
 
         header nav ul li a:hover,
@@ -86,7 +86,7 @@
             color: white;
             padding: 10px 20px;
             border: none;
-            border-radius: 8px; /* Rounded corners */
+            border-radius: 8px;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
@@ -106,7 +106,7 @@
             background-color: white;
             padding: 30px;
             margin-bottom: 25px;
-            border-radius: 12px; /* More rounded corners */
+            border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
@@ -125,7 +125,7 @@
         /* Home Page Specifics */
         .home-previews {
             display: flex;
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            flex-wrap: wrap;
             justify-content: space-around;
             gap: 25px;
             margin-top: 30px;
@@ -133,7 +133,7 @@
 
         .preview-card {
             flex: 1;
-            min-width: 280px; /* Minimum width for cards */
+            min-width: 280px;
             border: 1px solid #ddd;
             padding: 20px;
             border-radius: 10px;
@@ -161,31 +161,31 @@
         .personalized-feed {
             margin-top: 40px;
             padding: 20px;
-            background-color: #e9f7ef; /* Light green background */
+            background-color: #e9f7ef;
             border-left: 5px solid #28a745;
             border-radius: 8px;
         }
 
         /* Modal Styling */
         .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1000; /* Sit on top */
+            display: none;
+            position: fixed;
+            z-index: 1000;
             left: 0;
             top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.6);
             padding-top: 60px;
         }
 
         .modal-content {
             background-color: #fefefe;
-            margin: 5% auto; /* 5% from the top and centered */
+            margin: 5% auto;
             padding: 30px;
             border: 1px solid #888;
-            width: 90%; /* Responsive width */
+            width: 90%;
             max-width: 500px;
             border-radius: 12px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
@@ -209,6 +209,52 @@
             text-decoration: none;
         }
 
+        /* Custom Alert Modal */
+        #customAlertModal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7);
+            padding-top: 150px;
+        }
+
+        #customAlertModal .modal-content {
+            background-color: #fff;
+            margin: auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            text-align: center;
+            max-width: 350px;
+            position: relative;
+        }
+
+        #customAlertModal .modal-content p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        #customAlertModal .modal-content button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        #customAlertModal .modal-content button:hover {
+            background-color: #218838;
+        }
+
         /* Form Styling */
         form label {
             display: block;
@@ -224,17 +270,17 @@
         form input[type="number"],
         form textarea,
         form select {
-            width: calc(100% - 22px); /* Account for padding and border */
+            width: calc(100% - 22px);
             padding: 10px;
             margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            box-sizing: border-box; /* Include padding in width */
+            box-sizing: border-box;
             font-size: 1em;
         }
 
         form textarea {
-            resize: vertical; /* Allow vertical resizing */
+            resize: vertical;
             min-height: 80px;
         }
 
@@ -248,7 +294,7 @@
         /* Search Bar Styling */
         .search-bar {
             display: flex;
-            flex-wrap: wrap; /* Allow wrapping */
+            flex-wrap: wrap;
             margin-bottom: 20px;
             gap: 10px;
         }
@@ -259,12 +305,12 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 1em;
-            min-width: 150px; /* Ensure input is not too small */
+            min-width: 150px;
         }
 
         .search-bar button {
             padding: 10px 20px;
-            white-space: nowrap; /* Prevent button text from wrapping */
+            white-space: nowrap;
         }
 
         /* Map Placeholder */
@@ -300,10 +346,10 @@
 
         .tab-buttons {
             display: flex;
-            flex-wrap: wrap; /* Allow tabs to wrap */
+            flex-wrap: wrap;
             border-bottom: 2px solid #eee;
             margin-bottom: 20px;
-            gap: 5px; /* Space between buttons */
+            gap: 5px;
         }
 
         .tab-button {
@@ -317,16 +363,16 @@
             transition: background-color 0.3s ease, color 0.3s ease;
             font-weight: bold;
             color: #555;
-            flex-grow: 1; /* Allow buttons to grow and fill space */
+            flex-grow: 1;
             text-align: center;
-            min-width: 100px; /* Minimum width for tab buttons */
+            min-width: 100px;
         }
 
         .tab-button.active {
             background-color: #28a745;
             color: white;
             border-color: #28a745;
-            transform: translateY(2px); /* Slight lift */
+            transform: translateY(2px);
         }
 
         .tab-button:hover:not(.active) {
@@ -410,7 +456,7 @@
 
         /* Payment & Delivery Info */
         .payment-integration, .delivery-info {
-            background-color: #f0f8ff; /* Light blue */
+            background-color: #f0f8ff;
             padding: 15px;
             border-left: 5px solid #007bff;
             border-radius: 8px;
@@ -484,14 +530,26 @@
                 margin: 0 10px 10px 10px;
             }
 
-            .home-previews, .product-list, .organization-list, footer .container {
+            main section {
+                padding: 20px;
+            }
+
+            main section h2 {
+                font-size: 1.6em;
+            }
+
+            .preview-card h3 {
+                font-size: 1.3em;
+            }
+
+            .home-previews {
                 flex-direction: column;
                 align-items: center;
             }
 
-            .preview-card, .product-card, .org-card, .about-us-section, .customer-support-section {
-                width: 100%;
-                max-width: 400px; /* Constrain width on small screens */
+            .preview-card {
+                width: 90%;
+                max-width: 400px;
             }
 
             .modal-content {
@@ -504,12 +562,32 @@
             }
 
             .tab-button {
-                border-radius: 8px; /* Full rounded corners for stacked buttons */
-                border-bottom: 1px solid #ddd; /* Add back bottom border */
+                border-radius: 8px;
+                border-bottom: 1px solid #ddd;
             }
 
             .tab-button.active {
-                border-bottom: 1px solid #28a745; /* Active tab bottom border */
+                border-bottom: 1px solid #28a745;
+            }
+
+            .product-list, .organization-list {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card, .org-card {
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            footer .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-us-section, .customer-support-section {
+                width: 90%;
+                text-align: center;
             }
         }
 
@@ -523,11 +601,11 @@
             }
 
             main section {
-                padding: 20px;
+                padding: 15px;
             }
 
             main section h2 {
-                font-size: 1.5em;
+                font-size: 1.4em;
             }
 
             .button {
@@ -537,6 +615,24 @@
 
             form input, form select, form textarea, form button {
                 font-size: 0.9em;
+            }
+
+            .search-bar input[type="text"] {
+                min-width: unset;
+            }
+
+            .tab-button {
+                padding: 8px 10px;
+                font-size: 0.9em;
+            }
+
+            #customAlertModal .modal-content {
+                max-width: 280px;
+                padding: 20px;
+            }
+
+            #customAlertModal .modal-content p {
+                font-size: 1em;
             }
         }
     </style>
@@ -569,12 +665,12 @@
             <div class="home-previews">
                 <div class="preview-card">
                     <h3>Explore Places</h3>
-                    <p>Discover Ethiopia's rich geography.</p>
+                    <p>Discover Ethiopia's rich geography and local notices.</p>
                     <a href="#ahazePlaces" class="button nav-link">Go to ahazePlaces</a>
                 </div>
                 <div class="preview-card">
                     <h3>Connect with People</h3>
-                    <p>Build your network locally.</p>
+                    <p>Build your network locally and globally.</p>
                     <a href="#ahazeConnect" class="button nav-link">Go to ahazeConnect</a>
                 </div>
                 <div class="preview-card">
@@ -582,11 +678,36 @@
                     <p>Local marketplace at your fingertips.</p>
                     <a href="#ahazeMarket" class="button nav-link">Go to ahazeMarket</a>
                 </div>
+                <div class="preview-card">
+                    <h3>Find Organizations</h3>
+                    <p>Directory of businesses, NGOs, and government offices.</p>
+                    <a href="#ahazeOrganizations" class="button nav-link">Go to ahazeOrganizations</a>
+                </div>
+                <div class="preview-card">
+                    <h3>Share Knowledge</h3>
+                    <p>Community-driven Q&A and expert insights.</p>
+                    <a href="#ahazeKnowledge" class="button nav-link">Go to ahazeKnowledge</a>
+                </div>
             </div>
             <!-- Dynamic personalized content feed placeholder -->
             <div class="personalized-feed">
                 <h3>Your Personalized Feed (Login Required)</h3>
                 <p>Login to see updates from your friends, local news, and recommended products.</p>
+                <div class="feed-content">
+                    <!-- Placeholder feed items -->
+                    <div class="feed-item">
+                        <p><strong>Abebe Kebede</strong> posted in Kebele 05, Addis Ababa: "New community meeting for local development on Saturday!"</p>
+                        <small>2 hours ago</small>
+                    </div>
+                    <div class="feed-item">
+                        <p><strong>Local Honey Seller</strong> listed "Pure Sidama Honey" for 500 ETB.</p>
+                        <small>5 hours ago</small>
+                    </div>
+                    <div class="feed-item">
+                        <p><strong>Dr. Eleni Tesfaye</strong> answered a question in `ahazeKnowledge`: "Best practices for organic coffee farming."</p>
+                        <small>1 day ago</small>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -594,13 +715,14 @@
         <div id="loginModal" class="modal">
             <div class="modal-content">
                 <span class="close-button">&times;</span>
-                <h2>Login</h2>
+                <h2>Login to AhazeKulu</h2>
                 <form id="loginForm">
                     <label for="loginPhoneEmail">Phone/Email:</label>
-                    <input type="text" id="loginPhoneEmail" name="phoneEmail" required>
+                    <input type="text" id="loginPhoneEmail" name="phoneEmail" placeholder="Enter your phone or email" required>
                     <label for="loginPassword">Password:</label>
-                    <input type="password" id="loginPassword" name="password" required>
+                    <input type="password" id="loginPassword" name="password" placeholder="Enter your password" required>
                     <button type="submit" class="button">Login</button>
+                    <p style="text-align: center; margin-top: 15px;"><a href="#" id="forgotPasswordLink" style="color: #007bff; text-decoration: none;">Forgot Password?</a></p>
                 </form>
             </div>
         </div>
@@ -608,30 +730,32 @@
         <div id="signupModal" class="modal">
             <div class="modal-content">
                 <span class="close-button">&times;</span>
-                <h2>Signup</h2>
+                <h2>Join AhazeKulu</h2>
                 <form id="signupForm">
                     <label for="fullName">Full Name:</label>
-                    <input type="text" id="fullName" name="fullName" required>
+                    <input type="text" id="fullName" name="fullName" placeholder="Your full name" required>
                     <label for="signupPassword">Password:</label>
-                    <input type="password" id="signupPassword" name="password" required>
+                    <input type="password" id="signupPassword" name="password" placeholder="Min 12 chars, mix of types" required>
                     <label for="phone">Phone (Required):</label>
-                    <input type="tel" id="phone" name="phone" required>
+                    <input type="tel" id="phone" name="phone" placeholder="+251 9XX XXX XXXX" required>
                     <label for="email">Email (Optional):</label>
-                    <input type="email" id="email" name="email">
-                    <label for="workPlace">Work Place:</label>
-                    <input type="text" id="workPlace" name="workPlace">
-                    <label for="jobPosition">Job Position:</label>
-                    <input type="text" id="jobPosition" name="jobPosition">
-                    <label for="addressCountry">Address (Country):</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com">
+                    <label for="workPlace">Work Place (Optional):</label>
+                    <input type="text" id="workPlace" name="workPlace" placeholder="e.g., Ethio Telecom, Freelancer">
+                    <label for="jobPosition">Job Position (Optional):</label>
+                    <input type="text" id="jobPosition" name="jobPosition" placeholder="e.g., Software Engineer, Farmer">
+
+                    <h4 style="margin-top: 20px; color: #28a745;">Your Address (Hierarchical)</h4>
+                    <label for="addressCountry">Country:</label>
                     <input type="text" id="addressCountry" name="addressCountry" value="Ethiopia" disabled>
                     <label for="addressRegion">Region:</label>
-                    <select id="addressRegion" name="addressRegion">
+                    <select id="addressRegion" name="addressRegion" required>
                         <option value="">Select Region</option>
-                        <option value="Addis Ababa">Addis Ababa</option>
+                        <option value="Addis Ababa">Addis Ababa (City Admin)</option>
                         <option value="Afar">Afar</option>
                         <option value="Amhara">Amhara</option>
                         <option value="Benishangul-Gumuz">Benishangul-Gumuz</option>
-                        <option value="Dire Dawa">Dire Dawa</option>
+                        <option value="Dire Dawa">Dire Dawa (City Admin)</option>
                         <option value="Gambella">Gambella</option>
                         <option value="Harari">Harari</option>
                         <option value="Oromia">Oromia</option>
@@ -641,22 +765,23 @@
                         <option value="South West Ethiopia Peoples' Region">South West Ethiopia Peoples' Region</option>
                         <option value="Tigray">Tigray</option>
                     </select>
-                    <!-- More address fields (Zone, Woreda, Kebele, etc.) would follow,
-                         possibly dynamic based on previous selections -->
-                    <label for="addressZone">Zone:</label>
-                    <input type="text" id="addressZone" name="addressZone">
-                    <label for="addressWoreda">Woreda:</label>
-                    <input type="text" id="addressWoreda" name="addressWoreda">
-                    <label for="addressKebele">Kebele:</label>
-                    <input type="text" id="addressKebele" name="addressKebele">
-                    <label for="addressVillage">Village:</label>
-                    <input type="text" id="addressVillage" name="addressVillage">
-                    <label for="addressBuildingName">Building Name:</label>
-                    <input type="text" id="addressBuildingName" name="addressBuildingName">
-                    <label for="addressFloorNumber">Floor Number:</label>
-                    <input type="text" id="addressFloorNumber" name="addressFloorNumber">
-                    <label for="addressRoomNumber">Room Number:</label>
-                    <input type="text" id="addressRoomNumber" name="addressRoomNumber">
+                    <label for="addressZone">Zone (Optional):</label>
+                    <input type="text" id="addressZone" name="addressZone" placeholder="e.g., Arsi, Mekelle Zone">
+                    <label for="addressWoreda">Woreda (Optional):</label>
+                    <input type="text" id="addressWoreda" name="addressWoreda" placeholder="e.g., Dodola, Bole">
+                    <label for="addressKebele">Kebele (Optional):</label>
+                    <input type="text" id="addressKebele" name="addressKebele" placeholder="e.g., Kebele 01, Bole Bulbula">
+                    <label for="addressVillage">Village (Optional):</label>
+                    <input type="text" id="addressVillage" name="addressVillage" placeholder="If applicable">
+                    <label for="addressBuildingName">Building Name (Optional):</label>
+                    <input type="text" id="addressBuildingName" name="addressBuildingName" placeholder="e.g., Abyssinia Tower">
+                    <label for="addressFloorNumber">Floor Number (Optional):</label>
+                    <input type="text" id="addressFloorNumber" name="addressFloorNumber" placeholder="e.g., 5, Ground Floor">
+                    <label for="addressRoomNumber">Room Number (Optional):</label>
+                    <input type="text" id="addressRoomNumber" name="addressRoomNumber" placeholder="e.g., 501, Office 12">
+                    <p style="font-size: 0.85em; color: #666; margin-top: -10px; margin-bottom: 15px;">
+                        <a href="#" id="proposeLocationLink" style="color: #007bff; text-decoration: none;">Can't find your exact location? Propose a new one!</a>
+                    </p>
                     <button type="submit" class="button">Signup</button>
                 </form>
             </div>
@@ -666,47 +791,76 @@
         <section id="ahazePlaces" class="hidden">
             <h2>ahazePlaces - Explore Ethiopia</h2>
             <div class="search-bar">
-                <input type="text" placeholder="Search places..." id="placesSearch">
+                <input type="text" placeholder="Search places, e.g., 'Bole Sub City', 'Adama Market'" id="placesSearch">
                 <button class="button">Search</button>
             </div>
             <div class="map-placeholder">
                 <p>[Interactive Map Placeholder - Imagine Google Maps/Leaflet here]</p>
+                <p>Click on map markers for place details.</p>
                 <div id="locationHierarchy">
-                    <p>Ethiopia <span class="arrow">&gt;</span> Oromia <span class="arrow">&gt;</span> Arsi <span class="arrow">&gt;</span> Dodola <span class="arrow">&gt;</span> Kebele 01</p>
+                    <p>Current View: Ethiopia <span class="arrow">&gt;</span> Oromia <span class="arrow">&gt;</span> Arsi <span class="arrow">&gt;</span> Dodola <span class="arrow">&gt;</span> Kebele 01</p>
+                    <button class="button" style="margin-top: 10px;">Want to Go</button>
+                    <button class="button" style="margin-top: 10px;">Stood up for Notice</button>
+                    <button class="button" style="margin-top: 10px;">Transport Service Integration</button>
                 </div>
             </div>
             <div class="place-info-tabs tab-container">
                 <div class="tab-buttons">
                     <button class="tab-button active" data-tab="placePosts">Posts</button>
-                    <button class="tab-button" data-tab="placeKnowledge">Know_PlaceName</button>
-                    <button class="tab-button" data-tab="placeAgent">Reach our agent_PlaceName</button>
-                    <button class="tab-button" data-tab="placeLatest">Latest about_PlaceName</button>
+                    <button class="tab-button" data-tab="placeKnowledge">Know_Kebele 01</button>
+                    <button class="tab-button" data-tab="placeAgent">Reach our agent_Kebele 01</button>
+                    <button class="tab-button" data-tab="placeLatest">Latest about_Kebele 01</button>
                 </div>
                 <div id="placePosts" class="tab-content active">
                     <h3>Posts for Kebele 01</h3>
-                    <p>No posts yet. Be the first to share something!</p>
-                    <textarea placeholder="Share something about this place..."></textarea>
-                    <button class="button">Post</button>
+                    <div class="post-form">
+                        <textarea placeholder="Share something about this place... (e.g., local event, observation)" rows="3"></textarea>
+                        <input type="file" accept="image/*,video/*" multiple>
+                        <button class="button">Post to Kebele 01</button>
+                    </div>
+                    <div class="news-feed" style="margin-top: 20px;">
+                        <div class="post-item">
+                            <p><strong>User123:</strong> "Road construction started near the main square. Expect delays."</p>
+                            <small>2 hours ago | <a href="#">Like</a> | <a href="#">Comment</a> | <a href="#">Share</a></small>
+                        </div>
+                        <div class="post-item">
+                            <p><strong>Local Farmer:</strong> "Fresh produce available at the community market this Saturday!" <img src="https://placehold.co/100x70/E0E0E0/666666?text=Produce" alt="Produce" style="max-width: 100px; border-radius: 5px; margin-top: 5px;"></p>
+                            <small>Yesterday | <a href="#">Like</a> | <a href="#">Comment</a> | <a href="#">Share</a></small>
+                        </div>
+                    </div>
                 </div>
                 <div id="placeKnowledge" class="tab-content hidden">
-                    <h3>Know Kebele 01</h3>
-                    <p>Official and community information about Kebele 01 (geography, history, infrastructure, culture).</p>
-                    <ul>
-                        <li>Population: XXXX</li>
-                        <li>Key Landmarks: YYYY</li>
-                    </ul>
+                    <h3>Know Kebele 01 - Official & Community Info</h3>
+                    <p><strong>Geography:</strong> Kebele 01 is situated in the eastern part of Dodola Woreda, characterized by rolling hills and fertile valleys. It serves as a gateway to the Bale Mountains National Park.</p>
+                    <p><strong>History:</strong> Established in the early 1980s, Kebele 01 has a rich history tied to agricultural development in the region.</p>
+                    <p><strong>Infrastructure:</strong>
+                        <ul>
+                            <li>Electricity: Available to 70% of households.</li>
+                            <li>Water: Access to communal boreholes and a new piped water project.</li>
+                            <li>Internet: Limited 3G coverage, primarily via Ethio Telecom.</li>
+                            <li>Healthcare: One health post and a private clinic.</li>
+                        </ul>
+                    </p>
+                    <p><strong>Culture:</strong> Predominantly Oromo, known for traditional coffee ceremonies and vibrant local markets.</p>
+                    <button class="button" style="margin-top: 15px;">Propose an Edit</button> <!-- Requires moderation -->
                 </div>
                 <div id="placeAgent" class="tab-content hidden">
                     <h3>Reach our agent_Kebele 01</h3>
-                    <p>Contact local representative: [Agent Name] - Phone: [Agent Phone]</p>
-                    <textarea placeholder="Message the agent..."></textarea>
-                    <button class="button">Send Message</button>
+                    <div class="agent-info" style="border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                        <p><strong>Agent Name:</strong> Ato Getachew Lemma</p>
+                        <p><strong>Phone:</strong> +251 9XX XXX XXXX</p>
+                        <p><strong>Email:</strong> getachew.lemma@ahazekulu.com</p>
+                        <p><strong>Availability:</strong> Mon-Fri, 9:00 AM - 5:00 PM</p>
+                    </div>
+                    <textarea placeholder="Message Ato Getachew about a local issue or inquiry..." rows="4"></textarea>
+                    <button class="button">Send Message to Agent</button>
                 </div>
                 <div id="placeLatest" class="tab-content hidden">
                     <h3>Latest about Kebele 01</h3>
-                    <p>Weather: Sunny, 25°C</p>
-                    <p>Security: All clear.</p>
-                    <p>Market Update: Fresh produce available at local market.</p>
+                    <p><strong>Weather Update:</strong> Sunny with scattered clouds, High 26°C / Low 14°C. (Source: Ethiopian Met Agency)</p>
+                    <p><strong>Security Alert:</strong> No major incidents reported. Local police advise caution during evening hours. (Source: Local Police)</p>
+                    <p><strong>Market Update:</strong> Coffee prices stable. Teff prices increased by 5% this week. Local produce abundant. (Source: Kebele Market Committee)</p>
+                    <p><strong>Public Service Announcement:</strong> Vaccination drive for children aged 0-5 years this coming Tuesday at the Health Post. (Source: Kebele Health Office)</p>
                 </div>
             </div>
         </section>
@@ -724,40 +878,85 @@
                     <button class="tab-button" data-tab="viewMultimedia">View</button>
                 </div>
                 <div id="myFriends" class="tab-content active">
-                    <h3>My Friends</h3>
-                    <div class="user-list">
-                        <p>Friend 1</p>
-                        <p>Friend 2</p>
+                    <h3>My Friends' Feed</h3>
+                    <div class="post-form">
+                        <textarea placeholder="What's on your mind? Share an update, photo, or video..." rows="3"></textarea>
+                        <input type="file" accept="image/*,video/*" multiple>
+                        <button class="button">Post to Friends</button>
                     </div>
-                    <textarea placeholder="What's on your mind?"></textarea>
-                    <button class="button">Post</button>
-                    <div class="news-feed">
-                        <h4>News Feed</h4>
+                    <div class="news-feed" style="margin-top: 20px;">
                         <div class="post-item">
-                            <p><strong>John Doe:</strong> Enjoying the sunshine in Addis!</p>
-                            <span>Like | Comment | Share</span>
+                            <div class="user-avatar" style="background-image: url('https://placehold.co/40x40/007bff/FFFFFF?text=JD');"></div>
+                            <p><strong>John Doe:</strong> "Enjoying the beautiful view from Entoto Park today! #AddisAbaba #Nature" <img src="https://placehold.co/200x150/A0A0A0/FFFFFF?text=Entoto+Park" alt="Entoto Park" style="max-width: 100%; border-radius: 8px; margin-top: 10px;"></p>
+                            <small>1 hour ago | <a href="#">Like (15)</a> | <a href="#">Comment (3)</a> | <a href="#">Share</a></small>
+                        </div>
+                        <div class="post-item">
+                            <div class="user-avatar" style="background-image: url('https://placehold.co/40x40/28a745/FFFFFF?text=AS');"></div>
+                            <p><strong>Almaz Seifu:</strong> "Just launched my small business selling handmade crafts! Check out ahazeMarket for my listings. #SupportLocal"</p>
+                            <small>3 hours ago | <a href="#">Like (28)</a> | <a href="#">Comment (5)</a> | <a href="#">Share</a></small>
                         </div>
                     </div>
                 </div>
                 <div id="myCountry" class="tab-content hidden">
-                    <h3>My Country (Ethiopia)</h3>
-                    <p>Posts and updates from across Ethiopia.</p>
+                    <h3>My Country (Ethiopia) & Regional Updates</h3>
+                    <p>Browse public posts and news from across Ethiopia. Select a region to filter:</p>
+                    <select style="width: 100%; padding: 8px; border-radius: 5px; margin-bottom: 15px;">
+                        <option>All Ethiopia</option>
+                        <option>Addis Ababa</option>
+                        <option>Oromia</option>
+                        <option>Amhara</option>
+                    </select>
+                    <div class="news-feed">
+                        <div class="post-item">
+                            <p><strong>Ethiopia News:</strong> "New railway project announced for Afar region."</p>
+                            <small>Public Post | 1 day ago</small>
+                        </div>
+                    </div>
                 </div>
                 <div id="myWorkplace" class="tab-content hidden">
-                    <h3>My WorkPlace</h3>
-                    <p>Connect with colleagues from your workplace.</p>
+                    <h3>My WorkPlace - [Your Workplace Name]</h3>
+                    <p>Connect and collaborate with your colleagues. (Requires workplace to be set in profile)</p>
+                    <div class="user-list">
+                        <p>Aisha Mohammed (Marketing Manager)</p>
+                        <p>Kebede Tadesse (Software Developer)</p>
+                    </div>
+                    <button class="button">Post to Workplace</button>
                 </div>
                 <div id="myGroups" class="tab-content hidden">
                     <h3>My Groups</h3>
-                    <p>Your joined groups and discussions.</p>
+                    <p>Join or create groups based on your interests or community. </p>
+                    <div class="group-list">
+                        <div class="group-card">
+                            <h4>Addis Tech Enthusiasts</h4>
+                            <p>Discussion on latest tech trends.</p>
+                            <button class="button">View Group</button>
+                        </div>
+                        <div class="group-card">
+                            <h4>Dodola Community Forum</h4>
+                            <p>Local discussions for Dodola residents.</p>
+                            <button class="button">View Group</button>
+                        </div>
+                    </div>
+                    <button class="button" style="margin-top: 15px;">Create New Group</button>
                 </div>
                 <div id="mySimilars" class="tab-content hidden">
-                    <h3>My Similars</h3>
-                    <p>People with similar interests or locations.</p>
+                    <h3>People with Similar Interests/Locations</h3>
+                    <p>Discover new connections based on your profile and activity.</p>
+                    <div class="user-list">
+                        <p>Sara Ahmed (Loves hiking, lives in Oromia)</p>
+                        <p>Dawit Bekele (Software Developer, Addis Ababa)</p>
+                    </div>
+                    <button class="button">Find More Similars</button>
                 </div>
                 <div id="viewMultimedia" class="tab-content hidden">
                     <h3>View Multimedia</h3>
-                    <p>Photos and videos shared by your connections.</p>
+                    <p>Browse photos and videos shared by your connections and in your groups.</p>
+                    <div class="media-gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px;">
+                        <img src="https://placehold.co/120x120/E0E0E0/666666?text=Photo+1" alt="Photo 1" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+                        <img src="https://placehold.co/120x120/E0E0E0/666666?text=Video+1" alt="Video 1" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+                        <img src="https://placehold.co/120x120/E0E0E0/666666?text=Photo+2" alt="Photo 2" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+                        <img src="https://placehold.co/120x120/E0E0E0/666666?text=Photo+3" alt="Photo 3" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+                    </div>
                 </div>
             </div>
         </section>
@@ -765,6 +964,10 @@
         <!-- ahazeMarket Section -->
         <section id="ahazeMarket" class="hidden">
             <h2>ahazeMarket - Buy & Sell Locally</h2>
+            <div class="search-bar">
+                <input type="text" placeholder="Search products, services, or jobs..." id="marketSearch">
+                <button class="button">Search</button>
+            </div>
             <div class="market-tabs tab-container">
                 <div class="tab-buttons">
                     <button class="tab-button active" data-tab="marketAdvert">Advert</button>
@@ -775,70 +978,150 @@
                     <button class="tab-button" data-tab="marketAnalysis">Analysis</button>
                 </div>
                 <div id="marketAdvert" class="tab-content active">
-                    <h3>Advertisements</h3>
+                    <h3>Advertisements & Featured Listings</h3>
                     <div class="product-list">
                         <div class="product-card">
-                            <h4>Local Honey</h4>
-                            <p>Pure Ethiopian honey from Oromia.</p>
-                            <p>Price: 500 ETB</p>
+                            <img src="https://placehold.co/200x150/FFD700/000000?text=Local+Honey" alt="Local Honey" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
+                            <h4>Pure Sidama Honey</h4>
+                            <p>Organic, ethically sourced honey.</p>
+                            <p><strong>Price:</strong> 500 ETB</p>
+                            <p><small>Seller: Abebe's Farm | Location: Sidama</small></p>
                             <button class="button">View Details</button>
                         </div>
                         <div class="product-card">
-                            <h4>Handicraft Basket</h4>
-                            <p>Beautifully crafted basket from Bahir Dar.</p>
-                            <p>Price: 350 ETB</p>
+                            <img src="https://placehold.co/200x150/ADD8E6/000000?text=Handicraft+Basket" alt="Handicraft Basket" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
+                            <h4>Handwoven Basket</h4>
+                            <p>Beautifully crafted traditional basket from Bahir Dar.</p>
+                            <p><strong>Price:</strong> 350 ETB</p>
+                            <p><small>Seller: Ethiopian Crafts | Location: Bahir Dar</small></p>
                             <button class="button">View Details</button>
                         </div>
                     </div>
-                    <h3>Job / Part Time</h3>
-                    <p>Looking for a marketing assistant in Addis Ababa. Apply now!</p>
+                    <h3 style="margin-top: 30px;">Job / Part Time Opportunities</h3>
+                    <div class="job-listing-card" style="border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                        <h4>Marketing Assistant - Full Time</h4>
+                        <p><strong>Company:</strong> Innovative Solutions PLC</p>
+                        <p><strong>Location:</strong> Addis Ababa, Bole Sub City</p>
+                        <p>Seeking a dynamic marketing assistant. Apply now!</p>
+                        <button class="button">View Job & Apply</button>
+                    </div>
+                    <div class="job-listing-card" style="border: 1px solid #ddd; padding: 15px; border-radius: 8px;">
+                        <h4>Freelance Graphic Designer - Part Time</h4>
+                        <p><strong>Company:</strong> Creative Hub</p>
+                        <p><strong>Location:</strong> Remote/Addis Ababa</p>
+                        <p>Looking for a talented graphic designer for various projects.</p>
+                        <button class="button">View Job & Apply</button>
+                    </div>
                 </div>
                 <div id="marketSell" class="tab-content hidden">
                     <h3>Sell a Product/Service</h3>
                     <form>
-                        <label for="productName">Product Name:</label>
-                        <input type="text" id="productName" required>
-                        <label for="productDescription">Description:</label>
-                        <textarea id="productDescription"></textarea>
-                        <label for="productPrice">Price:</label>
-                        <input type="number" id="productPrice" step="0.01">
-                        <button type="submit" class="button">List Product</button>
+                        <label for="sellProductName">Product/Service Name:</label>
+                        <input type="text" id="sellProductName" required placeholder="e.g., Used Laptop, Plumbing Service">
+                        <label for="sellProductDescription">Description:</label>
+                        <textarea id="sellProductDescription" rows="5" placeholder="Provide detailed description of your item or service."></textarea>
+                        <label for="sellProductPrice">Price (ETB):</label>
+                        <input type="number" id="sellProductPrice" step="0.01" required placeholder="e.g., 2500.00">
+                        <label for="sellProductCategory">Category:</label>
+                        <select id="sellProductCategory" required>
+                            <option value="">Select Category</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="home_goods">Home Goods</option>
+                            <option value="services">Services</option>
+                            <option value="agriculture">Agriculture</option>
+                            <!-- More categories -->
+                        </select>
+                        <label for="sellProductImages">Upload Images (Max 5):</label>
+                        <input type="file" id="sellProductImages" accept="image/*" multiple>
+                        <label for="sellProductCondition">Condition:</label>
+                        <select id="sellProductCondition">
+                            <option value="new">New</option>
+                            <option value="used">Used</option>
+                            <option value="refurbished">Refurbished</option>
+                        </select>
+                        <label for="sellProductQuantity">Quantity:</label>
+                        <input type="number" id="sellProductQuantity" value="1" min="1">
+                        <button type="submit" class="button">List Product/Service</button>
                     </form>
                 </div>
                 <div id="marketBuy" class="tab-content hidden">
-                    <h3>Buy Products</h3>
-                    <p>Browse available products and services.</p>
+                    <h3>Browse & Buy Products</h3>
+                    <p>Explore a wide variety of items available for purchase.</p>
                     <div class="product-list">
                         <div class="product-card">
+                            <img src="https://placehold.co/200x150/D3D3D3/000000?text=Coffee+Beans" alt="Coffee Beans" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
                             <h4>Fresh Coffee Beans</h4>
-                            <p>From Sidama, Ethiopia.</p>
-                            <p>Price: 250 ETB/kg</p>
+                            <p>Premium quality, direct from Sidama.</p>
+                            <p><strong>Price:</strong> 250 ETB/kg</p>
+                            <p><small>Seller: Coffee Growers Co-op | Location: Sidama</small></p>
                             <button class="button">Add to Cart</button>
+                            <button class="button" style="background-color: #6c757d; margin-top: 5px;">Add to Wishlist</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://placehold.co/200x150/F0F8FF/000000?text=Laptop" alt="Laptop" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">
+                            <h4>Used Lenovo Laptop</h4>
+                            <p>Good condition, suitable for office work.</p>
+                            <p><strong>Price:</strong> 8,000 ETB</p>
+                            <p><small>Seller: Tech Reseller | Location: Addis Ababa</small></p>
+                            <button class="button">Add to Cart</button>
+                            <button class="button" style="background-color: #6c757d; margin-top: 5px;">Add to Wishlist</button>
                         </div>
                     </div>
                 </div>
                 <div id="marketNeeds" class="tab-content hidden">
-                    <h3>My Needs</h3>
-                    <p>Post what you are looking for.</p>
-                    <textarea placeholder="I need..."></textarea>
-                    <button class="button">Post Need</button>
+                    <h3>Post Your Needs</h3>
+                    <p>Can't find what you're looking for? Post a request here and let sellers find you!</p>
+                    <form>
+                        <label for="needDescription">Describe your need:</label>
+                        <textarea id="needDescription" rows="5" placeholder="e.g., 'Looking for a used refrigerator in good condition, budget around 5000 ETB, in Bole area.'"></textarea>
+                        <label for="needCategory">Category of need:</label>
+                        <select id="needCategory">
+                            <option value="">Select Category</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="home_goods">Home Goods</option>
+                            <option value="services">Services</option>
+                        </select>
+                        <label for="needBudget">Approx. Budget (ETB, Optional):</label>
+                        <input type="number" id="needBudget" step="0.01" placeholder="e.g., 5000">
+                        <button type="submit" class="button">Post My Need</button>
+                    </form>
                 </div>
                 <div id="marketDashboard" class="tab-content hidden">
-                    <h3>Dashboard</h3>
-                    <p>Overview of your sales, orders, and listings.</p>
+                    <h3>Seller Dashboard</h3>
+                    <p><strong>Active Listings:</strong> 5</p>
+                    <p><strong>Pending Orders:</strong> 2</p>
+                    <p><strong>Completed Sales (Last 30 Days):</strong> 12</p>
+                    <p><strong>Total Revenue (Last 30 Days):</strong> 8,500 ETB</p>
+                    <p><strong>Payout Status:</strong> Next payout on Aug 1, 2025</p>
+                    <button class="button">View All Listings</button>
+                    <button class="button" style="margin-left: 10px;">View All Orders</button>
                 </div>
                 <div id="marketAnalysis" class="tab-content hidden">
-                    <h3>Analysis</h3>
-                    <p>Market trends and insights.</p>
+                    <h3>Market Analysis & Insights</h3>
+                    <p><strong>Top Selling Categories (Your Listings):</strong> Agriculture, Handicrafts</p>
+                    <p><strong>Most Viewed Product:</strong> Pure Sidama Honey (250 views)</p>
+                    <p><strong>Traffic Sources:</strong> 60% from `ahazePlaces` links, 30% from direct search</p>
+                    <p style="font-style: italic;">[Placeholder for charts and graphs showing sales trends, product performance]</p>
                 </div>
             </div>
             <div class="payment-integration">
                 <h4>Payment Options:</h4>
-                <p>Telebirr, Ethiopian Banks, International Cards (via secure escrow)</p>
+                <p>Securely pay with Telebirr, major Ethiopian Banks (CBE, Awash, Dashen), and International Cards (Visa/Mastercard via secure gateway).</p>
+                <p>All transactions are protected by AhazeKulu's **Escrow Service** until delivery is confirmed.</p>
             </div>
             <div class="delivery-info">
                 <h4>Location-Based Delivery:</h4>
-                <p>Estimated delivery time for your location: 2 days.</p>
+                <p>Estimated delivery time for your current location (Addis Ababa, Bole Sub City) from seller's location (Sidama): **2-3 business days.**</p>
+                <p>Delivery fees are calculated based on distance and product weight.</p>
+            </div>
+            <h3 style="margin-top: 30px;">Gamification: Free Product Games & Bidding Offers</h3>
+            <div class="gamification-section" style="border: 1px solid #ddd; padding: 20px; border-radius: 8px; text-align: center;">
+                <h4>Daily Lucky Draw!</h4>
+                <p>Win a free product! Click to participate.</p>
+                <button class="button">Participate Now!</button>
+                <h4 style="margin-top: 20px;">Live Bidding: Antique Ethiopian Cross</h4>
+                <p>Current Bid: 1,200 ETB | Time Left: 01:23:45</p>
+                <button class="button">Place Your Bid</button>
             </div>
         </section>
 
@@ -846,7 +1129,7 @@
         <section id="ahazeOrganizations" class="hidden">
             <h2>ahazeOrganizations - Directory</h2>
             <div class="search-bar">
-                <input type="text" placeholder="Search organizations..." id="orgSearch">
+                <input type="text" placeholder="Search organizations by name, category, or location..." id="orgSearch">
                 <button class="button">Search</button>
             </div>
             <div class="org-categories">
@@ -854,26 +1137,46 @@
                 <button class="button">Private</button>
                 <button class="button">NGO</button>
                 <button class="button">Religious</button>
+                <button class="button" style="background-color: #6c757d;">View All</button>
             </div>
             <div class="organization-list">
                 <div class="org-card">
+                    <img src="https://placehold.co/80x80/28a745/FFFFFF?text=MoIT" alt="MoIT Logo" style="float: left; margin-right: 15px; border-radius: 50%;">
                     <h3>Ministry of Innovation & Technology</h3>
                     <p>Category: Governmental</p>
-                    <p>Address: Addis Ababa</p>
+                    <p>Address: Addis Ababa, Arada Sub City</p>
+                    <p><em>"Driving digital transformation in Ethiopia."</em></p>
                     <button class="button">View Virtual Office</button>
                 </div>
                 <div class="org-card">
+                    <img src="https://placehold.co/80x80/007bff/FFFFFF?text=ET" alt="Ethio Telecom Logo" style="float: left; margin-right: 15px; border-radius: 50%;">
                     <h3>Ethio Telecom</h3>
                     <p>Category: Private</p>
-                    <p>Address: Nationwide</p>
+                    <p>Address: Nationwide presence</p>
+                    <p><em>"Connecting Ethiopia through telecommunications."</em></p>
+                    <button class="button">View Virtual Office</button>
+                </div>
+                <div class="org-card">
+                    <img src="https://placehold.co/80x80/FFC107/000000?text=RCS" alt="Red Cross Logo" style="float: left; margin-right: 15px; border-radius: 50%;">
+                    <h3>Ethiopian Red Cross Society</h3>
+                    <p>Category: NGO</p>
+                    <p>Address: Addis Ababa, various branches</p>
+                    <p><em>"Humanitarian aid and disaster relief."</em></p>
                     <button class="button">View Virtual Office</button>
                 </div>
             </div>
+            <h3 style="margin-top: 30px;">Register Your Organization</h3>
+            <p>Create a virtual office for your organization on AhazeKulu to reach a wider audience and manage your presence.</p>
+            <button class="button">Register Organization</button>
         </section>
 
         <!-- ahazeKnowledge Section -->
         <section id="ahazeKnowledge" class="hidden">
-            <h2>ahazeKnowledge - Community Wisdom</h2>
+            <h2>ahazeKnowledge - Community Wisdom & Expertise</h2>
+            <div class="search-bar">
+                <input type="text" placeholder="Search questions, experts, or topics..." id="knowledgeSearch">
+                <button class="button">Search</button>
+            </div>
             <div class="knowledge-tabs tab-container">
                 <div class="tab-buttons">
                     <button class="tab-button active" data-tab="knowledgeExperts">Experts</button>
@@ -881,32 +1184,80 @@
                     <button class="tab-button" data-tab="knowledgeAnswer">Answer Questions</button>
                 </div>
                 <div id="knowledgeExperts" class="tab-content active">
-                    <h3>Experts</h3>
+                    <h3>Verified Experts on AhazeKulu</h3>
                     <div class="expert-list">
-                        <p>Dr. [Expert Name] - Agriculture</p>
-                        <p>Ato [Expert Name] - Software Development</p>
+                        <div class="expert-card" style="border: 1px solid #eee; padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                            <p><strong>Dr. Selamawit Kebede</strong> - Agriculture & Sustainable Farming</p>
+                            <small>Specialization: Coffee Cultivation, Soil Management</small><br>
+                            <button class="button" style="padding: 5px 10px; font-size: 0.85em; margin-top: 5px;">View Profile</button>
+                            <button class="button" style="background-color: #6c757d; padding: 5px 10px; font-size: 0.85em; margin-left: 5px; margin-top: 5px;">Ask a Question</button>
+                        </div>
+                        <div class="expert-card" style="border: 1px solid #eee; padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                            <p><strong>Ato Fikru Tesfaye</strong> - Small Business Management & Finance</p>
+                            <small>Specialization: Startup Funding, Marketing Strategy</small><br>
+                            <button class="button" style="padding: 5px 10px; font-size: 0.85em; margin-top: 5px;">View Profile</button>
+                            <button class="button" style="background-color: #6c757d; padding: 5px 10px; font-size: 0.85em; margin-left: 5px; margin-top: 5px;">Ask a Question</button>
+                        </div>
                     </div>
                 </div>
                 <div id="knowledgeAsk" class="tab-content hidden">
-                    <h3>Ask Anything</h3>
-                    <textarea placeholder="Type your question here..."></textarea>
-                    <button class="button">Submit Question</button>
+                    <h3>Ask a Question to the Community or Experts</h3>
+                    <form>
+                        <label for="questionTitle">Question Title (Concise):</label>
+                        <input type="text" id="questionTitle" placeholder="e.g., How to get a business license in Addis Ababa?" required>
+                        <label for="questionDetails">Details of your question:</label>
+                        <textarea id="questionDetails" rows="6" placeholder="Provide more context, what have you tried?"></textarea>
+                        <label for="questionCategory">Category:</label>
+                        <select id="questionCategory" required>
+                            <option value="">Select Category</option>
+                            <option value="business">Business & Entrepreneurship</option>
+                            <option value="education">Education</option>
+                            <option value="health">Health & Wellness</option>
+                            <option value="legal">Legal & Rights</option>
+                            <option value="technology">Technology</option>
+                        </select>
+                        <label for="askExpert">Ask a specific Expert (Optional):</label>
+                        <input type="text" id="askExpert" placeholder="Type expert name to search...">
+                        <button type="submit" class="button">Submit Question</button>
+                    </form>
                 </div>
                 <div id="knowledgeAnswer" class="tab-content hidden">
-                    <h3>Answer Questions</h3>
-                    <p><strong>Question:</strong> What are the best practices for coffee farming in Sidama?</p>
-                    <textarea placeholder="Provide your answer..."></textarea>
-                    <button class="button">Submit Answer</button>
+                    <h3>Answer Questions from the Community</h3>
+                    <div class="question-to-answer" style="border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                        <h4>Question: What are the best practices for coffee farming in Sidama?</h4>
+                        <p><small>Asked by: Farmer John | Category: Agriculture | 3 answers</small></p>
+                        <textarea placeholder="Provide your comprehensive answer here..." rows="6"></textarea>
+                        <button class="button">Submit Answer</button>
+                    </div>
+                    <div class="question-to-answer" style="border: 1px solid #ddd; padding: 15px; border-radius: 8px;">
+                        <h4>Question: How can I register my small business online in Ethiopia?</h4>
+                        <p><small>Asked by: New Entrepreneur | Category: Business & Entrepreneurship | 1 answer</small></p>
+                        <textarea placeholder="Provide your comprehensive answer here..." rows="6"></textarea>
+                        <button class="button">Submit Answer</button>
+                    </div>
                 </div>
             </div>
-            <div class="ai-integration">
-                <p>[AI Integration Placeholder: AI-powered recommendations and search]</p>
+            <div class="ai-integration" style="margin-top: 30px; padding: 20px; background-color: #e6f7ff; border-left: 5px solid #007bff; border-radius: 8px;">
+                <h3>AI Assistant for Knowledge</h3>
+                <p>Our AI can help you find answers faster or connect you to the right expert.</p>
+                <textarea placeholder="Ask the AI anything about Ethiopia..." rows="3"></textarea>
+                <button class="button">Ask AI</button>
+                <p style="margin-top: 10px; font-style: italic; color: #555;">[AI Response Placeholder: "Based on your query, I recommend checking the 'Business & Entrepreneurship' category or contacting Dr. Selamawit Kebede for agricultural advice."]</p>
             </div>
         </section>
 
         <!-- User Profile Section -->
         <section id="userProfile" class="hidden">
-            <h2>My Profile</h2>
+            <h2>My Profile - [Your Full Name]</h2>
+            <div class="profile-header" style="text-align: center; margin-bottom: 20px;">
+                <img src="https://placehold.co/100x100/28a745/FFFFFF?text=USER" alt="User Profile Picture" style="border-radius: 50%; border: 3px solid #28a745; margin-bottom: 10px;">
+                <h3>[Your Full Name]</h3>
+                <p>[Your Job Position] at [Your Work Place]</p>
+                <p>Lives in: [Your Kebele, Woreda, Region]</p>
+                <button class="button">Edit Profile</button>
+                <button class="button" style="background-color: #6c757d; margin-left: 10px;">Privacy Settings</button>
+            </div>
+
             <div class="profile-tabs tab-container">
                 <div class="tab-buttons">
                     <button class="tab-button active" data-tab="profilePlaces">ahazePlaces</button>
@@ -918,38 +1269,98 @@
                     <button class="tab-button" data-tab="profileAccount">My Account</button>
                 </div>
                 <div id="profilePlaces" class="tab-content active">
-                    <h3>My Addresses</h3>
-                    <p>Home Address: [User's Address]</p>
-                    <p>Birth Place: [User's Birth Place]</p>
+                    <h3>My Addresses & Saved Places</h3>
+                    <h4>Primary Address:</h4>
+                    <p>Country: Ethiopia</p>
+                    <p>Region: Oromia</p>
+                    <p>Zone: Arsi</p>
+                    <p>Woreda: Dodola</p>
+                    <p>Kebele: Kebele 01</p>
+                    <p>Building Name: Main Building</p>
+                    <p>Floor: 3rd Floor</p>
+                    <p>Room: 305</p>
                     <button class="button">Edit Address</button>
+                    <h4 style="margin-top: 20px;">My BirthPlace:</h4>
+                    <p>Gondar, Amhara Region</p>
+                    <h4 style="margin-top: 20px;">Places I Want to Go:</h4>
+                    <ul>
+                        <li>Simien Mountains National Park</li>
+                        <li>Lalibela Rock-Hewn Churches</li>
+                    </ul>
                 </div>
                 <div id="profileConnect" class="tab-content hidden">
                     <h3>My Friends & Groups</h3>
-                    <p>Manage your social connections.</p>
+                    <h4 style="margin-top: 0;">My Friends (5):</h4>
+                    <div class="user-list">
+                        <p>John Doe</p>
+                        <p>Almaz Seifu</p>
+                    </div>
+                    <h4 style="margin-top: 20px;">My Groups (3):</h4>
+                    <div class="group-list">
+                        <p>Addis Tech Enthusiasts</p>
+                        <p>Dodola Community Forum</p>
+                    </div>
+                    <button class="button">Manage Connections</button>
                 </div>
                 <div id="profileMarket" class="tab-content hidden">
-                    <h3>My Products & Orders</h3>
-                    <p>View your listings, orders, sales, and cart.</p>
+                    <h3>My Products, Orders & Sales</h3>
+                    <h4 style="margin-top: 0;">My Active Listings (2):</h4>
+                    <div class="product-list">
+                        <div class="product-card" style="border: none; box-shadow: none; padding: 0;">
+                            <h4>Pure Sidama Honey</h4>
+                            <p>Price: 500 ETB</p>
+                        </div>
+                    </div>
+                    <h4 style="margin-top: 20px;">My Recent Orders (Last 30 Days):</h4>
+                    <ul>
+                        <li>Order #12345 - Used Lenovo Laptop (Delivered)</li>
+                        <li>Order #12346 - Fresh Coffee Beans (Pending Delivery)</li>
+                    </ul>
+                    <h4 style="margin-top: 20px;">My Sales (Last 30 Days):</h4>
+                    <ul>
+                        <li>Sale #98765 - Handwoven Basket (Completed)</li>
+                    </ul>
+                    <button class="button">View My Cart</button>
                 </div>
                 <div id="profileOrganizations" class="tab-content hidden">
                     <h3>My Organizations</h3>
-                    <p>Organizations you are associated with.</p>
+                    <p>Organizations you are associated with or manage.</p>
+                    <div class="org-card" style="border: none; box-shadow: none; padding: 0;">
+                        <h3>My Company Name PLC</h3>
+                        <p>Role: Founder</p>
+                        <button class="button">View Virtual Office</button>
+                    </div>
                 </div>
                 <div id="profileKnowledge" class="tab-content hidden">
-                    <h3>My Contributions</h3>
-                    <p>Questions asked and answers provided.</p>
+                    <h3>My Knowledge Contributions</h3>
+                    <h4 style="margin-top: 0;">Questions I've Asked:</h4>
+                    <ul>
+                        <li>How to get a business license in Addis Ababa?</li>
+                    </ul>
+                    <h4 style="margin-top: 20px;">Answers I've Provided:</h4>
+                    <ul>
+                        <li>Best practices for coffee farming in Sidama.</li>
+                    </ul>
+                    <button class="button">View My Contributions</button>
                 </div>
                 <div id="profileSchool" class="tab-content hidden">
-                    <h3>My School</h3>
-                    <p>Educational affiliations.</p>
+                    <h3>My School & Education</h3>
+                    <p><strong>University:</strong> Addis Ababa University</p>
+                    <p><strong>Major:</strong> Computer Science</p>
+                    <p><strong>Graduation Year:</strong> 20XX</p>
+                    <button class="button">Add/Edit Education</button>
                 </div>
                 <div id="profileAccount" class="tab-content hidden">
-                    <h3>My Account Settings</h3>
-                    <p>Manage personal info, activity, and privacy settings.</p>
+                    <h3>Account Settings & Privacy</h3>
+                    <p>Manage your personal information, password, and privacy preferences.</p>
                     <div class="settings">
                         <h4>Privacy Settings</h4>
-                        <label><input type="checkbox"> Make my profile public</label>
+                        <label><input type="checkbox" checked> Make my profile public</label><br>
+                        <label><input type="checkbox"> Show my phone number to friends</label><br>
+                        <label><input type="checkbox"> Show my workplace</label>
                     </div>
+                    <button class="button">Change Password</button>
+                    <button class="button" style="background-color: #dc3545; margin-left: 10px;">Delete Account</button>
                 </div>
             </div>
         </section>
@@ -968,9 +1379,19 @@
                 <h3>Customer Support</h3>
                 <p>Call Center: +251 9XX XXX XXX (for limited internet access)</p>
                 <p>SMS Support: 8XXX</p>
+                <button class="button">Send Feedback</button>
             </div>
         </div>
     </footer>
+
+    <!-- Custom Alert Modal HTML -->
+    <div id="customAlertModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="customAlertCloseBtn">&times;</span>
+            <p id="customAlertMessage"></p>
+            <button id="customAlertOkBtn" class="button">OK</button>
+        </div>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -984,6 +1405,27 @@
             const closeButtons = document.querySelectorAll('.modal .close-button');
             const loginForm = document.getElementById('loginForm');
             const signupForm = document.getElementById('signupForm');
+
+            // Get references for custom alert
+            const customAlertModal = document.getElementById('customAlertModal');
+            const customAlertMessage = document.getElementById('customAlertMessage');
+            const customAlertCloseBtn = document.getElementById('customAlertCloseBtn');
+            const customAlertOkBtn = document.getElementById('customAlertOkBtn');
+
+            // Function to show custom alert
+            function showAlert(message) {
+                customAlertMessage.textContent = message;
+                customAlertModal.style.display = 'block';
+            }
+
+            // Close custom alert
+            customAlertCloseBtn.addEventListener('click', () => {
+                customAlertModal.style.display = 'none';
+            });
+
+            customAlertOkBtn.addEventListener('click', () => {
+                customAlertModal.style.display = 'none';
+            });
 
             // Function to show a specific section and hide others
             function showSection(sectionId) {
@@ -1010,6 +1452,7 @@
                     // Close any open modals when navigating
                     loginModal.style.display = 'none';
                     signupModal.style.display = 'none';
+                    customAlertModal.style.display = 'none'; // Also close custom alert
                 });
             });
 
@@ -1039,6 +1482,9 @@
                 if (e.target === signupModal) {
                     signupModal.style.display = 'none';
                 }
+                if (e.target === customAlertModal) { // Close custom alert if clicked outside
+                    customAlertModal.style.display = 'none';
+                }
             });
 
             // Handle form submissions (placeholder)
@@ -1049,7 +1495,7 @@
                     phoneEmail: loginForm.loginPhoneEmail.value,
                     password: loginForm.loginPassword.value
                 });
-                alert('Login functionality is a placeholder. No actual login occurs.'); // Using alert for MVP demonstration
+                showAlert('Login functionality is a placeholder. No actual login or data saving occurs.');
                 loginModal.style.display = 'none';
                 // Potentially show personalized feed or redirect
             });
@@ -1073,7 +1519,7 @@
                     addressFloorNumber: signupForm.addressFloorNumber.value,
                     addressRoomNumber: signupForm.addressRoomNumber.value
                 });
-                alert('Signup functionality is a placeholder. No actual registration occurs.'); // Using alert for MVP demonstration
+                showAlert('Signup functionality is a placeholder. No actual registration or data saving occurs.');
                 signupModal.style.display = 'none';
             });
 
@@ -1097,6 +1543,20 @@
                     });
                 });
             });
+
+            // Placeholder for "Forgot Password" and "Propose Location" links
+            document.getElementById('forgotPasswordLink').addEventListener('click', (e) => {
+                e.preventDefault();
+                showAlert('Forgot Password functionality is a placeholder. In a real app, this would initiate a password reset flow.');
+                loginModal.style.display = 'none';
+            });
+
+            document.getElementById('proposeLocationLink').addEventListener('click', (e) => {
+                e.preventDefault();
+                showAlert('Propose Location functionality is a placeholder. In a real app, this would open a form for submitting new location data for moderation.');
+                signupModal.style.display = 'none';
+            });
+
 
             // Initial section display (show home page on load)
             showSection('home');
